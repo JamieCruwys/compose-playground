@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Compose Playground</string>
+    <string name="image_content_description">Image</string>
 </resources>
