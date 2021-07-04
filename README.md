@@ -2,9 +2,9 @@
 Jetpack Compose playground
 
 ## Reading list
-* [ ] [Compose docs](https://developer.android.com/jetpack/compose/testing)
-* [ ] [Compose docs - semantics](https://developer.android.com/jetpack/compose/accessibility#semantics)
-* [ ] [Jetpack Compose: Screencasts](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8fZY3smX9CPx9Y_O80ycAd)
+* [x] [Compose docs](https://developer.android.com/jetpack/compose/testing)
+* [x] [Compose docs - semantics](https://developer.android.com/jetpack/compose/accessibility#semantics)
+* [ ] [Jetpack Compose: Screencasts](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8fZY3smX9CPx9Y_O80ycAd) - TODO: Lists & State
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)

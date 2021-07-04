@@ -21,6 +21,12 @@ class ComposeTest {
     @ExperimentalTestApi
     @Test
     fun test_articles_shown() {
+        // Tree is merged by default so Button(Text("Hello"),Text("World") would mean
+        // Button's label would be "Hello World". By using the unmerged tree we can
+        // see the structure before, so we can pick out Text("Hello") and
+        // Text("World") more easily. Look in the logs for the tag "ComposeTest" for output.
+        rule.onRoot(useUnmergedTree = true).printToLog(ComposeTest::class.java.simpleName)
+
         assertText("One title")
         assertText("One subtitle")
         assertText("December 2016")
@@ -43,7 +49,7 @@ class ComposeTest {
     }
 
     private fun assertText(text: String) {
-        rule.onNodeWithText(text).performScrollTo().assertExists()
+        rule.onNodeWithText(text).performScrollTo().assertIsDisplayed()
     }
 
     companion object {
