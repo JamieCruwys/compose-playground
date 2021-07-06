@@ -1,5 +1,7 @@
 package uk.co.jamiecruwys.compose.playground
 
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import org.junit.Before
@@ -11,6 +13,8 @@ class ComposeTest {
     @get:Rule
     val rule = createAndroidComposeRule<MainActivity>()
 
+    @ExperimentalFoundationApi
+    @ExperimentalAnimationApi
     @Before
     fun setup() {
         rule.setContent {
@@ -57,27 +61,32 @@ class ComposeTest {
             Article(
                 title = "One title",
                 subtitle = "One subtitle",
-                date = "December 2016"
+                date = "December 2016",
+                year = 2016
             ),
             Article(
                 title = "Two title",
                 subtitle = "Two subtitle",
-                date = "December 2017"
+                date = "December 2017",
+                year = 2017
             ),
             Article(
                 title = "Three title",
                 subtitle = "Three subtitle",
-                date = "December 2018"
+                date = "December 2018",
+                year = 2018
             ),
             Article(
                 title = "Four title",
                 subtitle = "Four subtitle",
-                date = "December 2019"
+                date = "December 2019",
+                year = 2019
             ),
             Article(
                 title = "Five title",
                 subtitle = "Five subtitle",
-                date = "December 2020"
+                date = "December 2020",
+                year = 2020
             ),
         )
     }
