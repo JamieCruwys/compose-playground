@@ -10,6 +10,7 @@ Jetpack Compose playground
 * [x] [Thinking in Compose](https://developer.android.com/jetpack/compose/mental-model)
 * [ ] [State and Jetpack Compose](https://developer.android.com/jetpack/compose/state)
 * [ ] [Guide to app architecture](https://developer.android.com/jetpack/guide)
+* [x] [Jetpack Compose: Lists](https://www.youtube.com/watch?v=BhqPpUYJYeQ)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
