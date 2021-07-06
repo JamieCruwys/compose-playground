@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Compose Playground</string>
     <string name="image_content_description">Image</string>
+    <string name="scroll_to_top_content_description">Scroll to top</string>
 </resources>

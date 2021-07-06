@@ -18,54 +18,59 @@ import androidx.compose.ui.unit.dp
 import uk.co.jamiecruwys.compose.playground.Article
 
 @Composable
-fun ArticleItem(article: Article) {
-    val favourite = remember { mutableStateOf(false) }
+fun ArticleItem(
+    article: Article,
+    modifier: Modifier = Modifier
+) {
+    Box(modifier) {
+        val favourite = remember { mutableStateOf(false) }
 
-    MaterialTheme {
-        val typography = MaterialTheme.typography
-        Card(
-            modifier = Modifier
-                .padding(16.dp),
-            elevation = 6.dp,
-        ) {
-            Column {
-                Image(
-                    painter = painterResource(uk.co.jamiecruwys.compose.playground.R.drawable.header),
-                    contentDescription = stringResource(uk.co.jamiecruwys.compose.playground.R.string.image_content_description),
-                    modifier = Modifier
-                        .height(180.dp)
-                        .fillMaxWidth()
-                        .clip(shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)),
-                    contentScale = ContentScale.Crop,
-                )
-                Row {
-                    Column(modifier = Modifier
-                        .padding(16.dp)
-                        .weight(8f)
-                    ) {
-                        Text(
-                            text = article.title,
-                            style = typography.h5,
-                            maxLines = 2,
-                            overflow = TextOverflow.Ellipsis,
-                        )
-                        Spacer(Modifier.height(4.dp))
-                        Text(
-                            text = article.subtitle,
-                            style = typography.body2,
-                        )
-                        Spacer(Modifier.height(4.dp))
-                        Text(
-                            text = article.date,
-                            style = typography.body2,
-                        )
-                    }
-                    Column(modifier = Modifier
-                        .padding(8.dp)
-                        .weight(2f)
-                    ) {
-                        FavouriteButton(isChecked = favourite.value) {
-                            favourite.value = favourite.value.not()
+        MaterialTheme {
+            val typography = MaterialTheme.typography
+            Card(
+                modifier = Modifier
+                    .padding(16.dp),
+                elevation = 6.dp,
+            ) {
+                Column {
+                    Image(
+                        painter = painterResource(uk.co.jamiecruwys.compose.playground.R.drawable.header),
+                        contentDescription = stringResource(uk.co.jamiecruwys.compose.playground.R.string.image_content_description),
+                        modifier = Modifier
+                            .height(180.dp)
+                            .fillMaxWidth()
+                            .clip(shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)),
+                        contentScale = ContentScale.Crop,
+                    )
+                    Row {
+                        Column(modifier = Modifier
+                            .padding(16.dp)
+                            .weight(8f)
+                        ) {
+                            Text(
+                                text = article.title,
+                                style = typography.h5,
+                                maxLines = 2,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                text = article.subtitle,
+                                style = typography.body2,
+                            )
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                text = article.date,
+                                style = typography.body2,
+                            )
+                        }
+                        Column(modifier = Modifier
+                            .padding(8.dp)
+                            .weight(2f)
+                        ) {
+                            FavouriteButton(isChecked = favourite.value) {
+                                favourite.value = favourite.value.not()
+                            }
                         }
                     }
                 }
@@ -81,7 +86,8 @@ fun ArticleItemPreview() {
         Article(
             title = "One title",
             subtitle = "One subtitle",
-            date = "December 2016"
+            date = "December 2016",
+            year = 2016
         )
     )
 }
