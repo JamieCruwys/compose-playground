@@ -1,9 +1,10 @@
 package uk.co.jamiecruwys.compose.playground.repository
 
 import uk.co.jamiecruwys.compose.playground.Article
+import javax.inject.Inject
 
-class ArticleRepository {
-    fun getArticles() = listOf(
+open class ArticleRepository @Inject constructor() {
+    open fun getArticles(): List<Article>? = listOf(
         Article(
             title = "One title",
             subtitle = "One subtitle",
