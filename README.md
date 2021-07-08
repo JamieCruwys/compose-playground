@@ -14,7 +14,6 @@ Jetpack Compose playground
 * [x] [State and Jetpack Compose (ViewModels)](https://developer.android.com/jetpack/compose/state#viewmodel-state)
 * [x] [Jetpack Compose and Hilt](https://developer.android.com/jetpack/compose/libraries#hilt)
 
-
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
 * [Compose Cookbook repo](https://github.com/Gurupreet/ComposeCookBook)
