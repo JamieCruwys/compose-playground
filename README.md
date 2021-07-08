@@ -11,6 +11,9 @@ Jetpack Compose playground
 * [ ] [State and Jetpack Compose](https://developer.android.com/jetpack/compose/state)
 * [ ] [Guide to app architecture](https://developer.android.com/jetpack/guide)
 * [x] [Jetpack Compose: Lists](https://www.youtube.com/watch?v=BhqPpUYJYeQ)
+* [x] [State and Jetpack Compose (ViewModels)](https://developer.android.com/jetpack/compose/state#viewmodel-state)
+* [x] [Jetpack Compose and Hilt](https://developer.android.com/jetpack/compose/libraries#hilt)
+
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
