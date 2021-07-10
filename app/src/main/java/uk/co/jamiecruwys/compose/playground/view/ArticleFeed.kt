@@ -27,6 +27,7 @@ import uk.co.jamiecruwys.compose.playground.Article
 @Composable
 fun ArticleFeed(
     articles: List<Article>,
+    shouldGroupByYear: Boolean,
     modifier: Modifier = Modifier
 ) {
     Box(modifier) {
@@ -40,13 +41,22 @@ fun ArticleFeed(
                 .fillMaxWidth()
                 .testTag("ArticleFeed")
         ) {
-            // TODO: This should be done in the ViewModel
-            val grouped = articles.groupBy { it.year }
+            if (shouldGroupByYear) {
+                // TODO: This should be done in the ViewModel
+                val grouped = articles.groupBy { it.year }
 
-            grouped.forEach { (year, articles) ->
-                stickyHeader {
-                    ArticleYearHeader(year, Modifier.fillParentMaxWidth())
+                grouped.forEach { (year, articles) ->
+                    stickyHeader {
+                        ArticleYearHeader(year, Modifier.fillParentMaxWidth())
+                    }
+                    items(articles) { article ->
+                        ArticleItem(
+                            article,
+                            Modifier.fillMaxWidth()
+                        )
+                    }
                 }
+            } else {
                 items(articles) { article ->
                     ArticleItem(
                         article,
@@ -98,6 +108,7 @@ fun ArticleFeedPreview() {
                 date = "December 2017",
                 year = 2017
             ),
-        )
+        ),
+        shouldGroupByYear = true
     )
 }

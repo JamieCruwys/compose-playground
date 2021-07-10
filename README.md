@@ -14,7 +14,7 @@ Jetpack Compose playground
 * [x] [State and Jetpack Compose (ViewModels)](https://developer.android.com/jetpack/compose/state#viewmodel-state)
 * [x] [Jetpack Compose and Hilt](https://developer.android.com/jetpack/compose/libraries#hilt)
 * [ ] [Using Jetpack libraries in Compose](https://www.youtube.com/watch?v=0z_dwBGQQWQ&t=573s)
-* [ ] [Exploring Jetpack Compose: TopAppBar](https://medium.com/google-developer-experts/exploring-jetpack-compose-topappbar-c8b79893be34)
+* [x] [Exploring Jetpack Compose: TopAppBar](https://medium.com/google-developer-experts/exploring-jetpack-compose-topappbar-c8b79893be34)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
