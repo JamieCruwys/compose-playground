@@ -26,8 +26,7 @@ import uk.co.jamiecruwys.compose.playground.Article
 @ExperimentalFoundationApi
 @Composable
 fun ArticleFeed(
-    articles: List<Article>,
-    shouldGroupByYear: Boolean,
+    data: Map<String?, List<Article>>,
     modifier: Modifier = Modifier
 ) {
     Box(modifier) {
@@ -41,22 +40,13 @@ fun ArticleFeed(
                 .fillMaxWidth()
                 .testTag("ArticleFeed")
         ) {
-            if (shouldGroupByYear) {
-                // TODO: This should be done in the ViewModel
-                val grouped = articles.groupBy { it.year }
-
-                grouped.forEach { (year, articles) ->
+            data.forEach { (year, articles) ->
+                year?.let {
                     stickyHeader {
-                        ArticleYearHeader(year, Modifier.fillParentMaxWidth())
-                    }
-                    items(articles) { article ->
-                        ArticleItem(
-                            article,
-                            Modifier.fillMaxWidth()
-                        )
+                        ArticleYearHeader(it, Modifier.fillParentMaxWidth())
                     }
                 }
-            } else {
+
                 items(articles) { article ->
                     ArticleItem(
                         article,
@@ -89,26 +79,30 @@ fun ArticleFeed(
 @Composable
 fun ArticleFeedPreview() {
     ArticleFeed(
-        listOf(
-            Article(
-                title = "One title",
-                subtitle = "One subtitle",
-                date = "December 2016",
-                year = 2016
-            ),
-            Article(
-                title = "One title",
-                subtitle = "One subtitle",
-                date = "December 2016",
-                year = 2016
-            ),
-            Article(
-                title = "Two title",
-                subtitle = "Two subtitle",
-                date = "December 2017",
-                year = 2017
-            ),
-        ),
-        shouldGroupByYear = true
+        mapOf(
+            Pair(
+                null,
+                listOf(
+                    Article(
+                        title = "One title",
+                        subtitle = "One subtitle",
+                        date = "December 2016",
+                        year = 2016
+                    ),
+                    Article(
+                        title = "One title",
+                        subtitle = "One subtitle",
+                        date = "December 2016",
+                        year = 2016
+                    ),
+                    Article(
+                        title = "Two title",
+                        subtitle = "Two subtitle",
+                        date = "December 2017",
+                        year = 2017
+                    ),
+                ),
+            )
+        )
     )
 }

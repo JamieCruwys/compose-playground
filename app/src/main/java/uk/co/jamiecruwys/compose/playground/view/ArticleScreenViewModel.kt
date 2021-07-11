@@ -12,14 +12,29 @@ import javax.inject.Inject
 class ArticleScreenViewModel @Inject constructor(
     private val repository: ArticleRepository
 ): ViewModel() {
-    private val _articles = MutableLiveData<List<Article>>()
-    val articles: LiveData<List<Article>> = _articles
+    private val _articles = MutableLiveData<Map<String?, List<Article>>>()
+    val articles: LiveData<Map<String?, List<Article>>> = _articles
 
     init {
         load()
     }
 
     fun load() {
-        _articles.postValue(repository.getArticles())
+        val items = mutableMapOf<String?, List<Article>>(
+            Pair(null, getArticles())
+        )
+        _articles.postValue(items)
     }
+
+    fun groupByYear() {
+        val articles = repository.getArticles()
+        val grouped: Map<String?, List<Article>> = articles.groupBy { it.year.toString() }
+        _articles.postValue(grouped)
+    }
+
+    fun showEmpty() {
+        _articles.postValue(mutableMapOf())
+    }
+
+    private fun getArticles() = repository.getArticles()
 }

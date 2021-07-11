@@ -12,7 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ArticleYearHeader(year: Int, modifier: Modifier = Modifier) {
+fun ArticleYearHeader(year: String, modifier: Modifier = Modifier) {
     Box(modifier) {
         Row(
             Modifier
@@ -21,7 +21,7 @@ fun ArticleYearHeader(year: Int, modifier: Modifier = Modifier) {
                 .padding(horizontal = 16.dp, vertical = 12.dp)
         ) {
             Text(
-                year.toString(),
+                year,
                 color = Color.White,
                 fontWeight = FontWeight.Bold
             )
@@ -32,5 +32,5 @@ fun ArticleYearHeader(year: Int, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun ArticleYearPreview() {
-    ArticleYearHeader(2021)
+    ArticleYearHeader("2021")
 }
