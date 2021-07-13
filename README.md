@@ -8,7 +8,7 @@ Jetpack Compose playground
 * [x] [What's new in Jetpack Compose](https://www.youtube.com/watch?v=7Mf2175h3RQ&t=945s)
 * [ ] [Compose pathway](https://developer.android.com/courses/pathways/compose) - Got to step 4
 * [x] [Thinking in Compose](https://developer.android.com/jetpack/compose/mental-model)
-* [ ] [State and Jetpack Compose](https://developer.android.com/jetpack/compose/state)
+* [x] [State and Jetpack Compose](https://developer.android.com/jetpack/compose/state)
 * [ ] [Guide to app architecture](https://developer.android.com/jetpack/guide)
 * [x] [Jetpack Compose: Lists](https://www.youtube.com/watch?v=BhqPpUYJYeQ)
 * [x] [State and Jetpack Compose (ViewModels)](https://developer.android.com/jetpack/compose/state#viewmodel-state)

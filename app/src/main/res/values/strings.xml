@@ -5,4 +5,7 @@
     <string name="menu_item_group_by_year">Group by year</string>
     <string name="menu_item_filter">Filter</string>
     <string name="menu_item_empty">Empty</string>
+    <string name="feed_route">Feed</string>
+    <string name="favourites_route">Favourites</string>
+    <string name="profile_route">Profile</string>
 </resources>

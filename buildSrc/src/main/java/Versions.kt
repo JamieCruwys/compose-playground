@@ -14,6 +14,7 @@ object Versions {
     const val COMPOSE = "1.0.0-rc01"
     const val COMPOSE_ACTIVITY = "1.3.0-rc01"
     const val COMPOSE_VIEWMODEL = "1.0.0-alpha07"
+    const val COMPOSE_NAVIGATION = "2.4.0-alpha04"
     const val CORE_KTX = "1.6.0"
     const val APPCOMPAT = "1.3.0"
     const val MATERIAL = "1.4.0"
