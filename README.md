@@ -15,6 +15,7 @@ Jetpack Compose playground
 * [x] [Jetpack Compose and Hilt](https://developer.android.com/jetpack/compose/libraries#hilt)
 * [ ] [Using Jetpack libraries in Compose](https://www.youtube.com/watch?v=0z_dwBGQQWQ&t=573s)
 * [x] [Exploring Jetpack Compose: TopAppBar](https://medium.com/google-developer-experts/exploring-jetpack-compose-topappbar-c8b79893be34)
+* [ ] [Navigating with Compose](https://developer.android.com/jetpack/compose/navigation)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
