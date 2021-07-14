@@ -16,7 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import uk.co.jamiecruwys.compose.playground.R
@@ -30,7 +30,11 @@ fun FavouriteButton(isChecked: Boolean, onClick: () -> Unit) {
         val tint by transition.animateColor(
             label = "Tint"
         ) { isChecked ->
-            if (isChecked) Color.Red else Color.Black
+            if (isChecked) {
+                colorResource(R.color.favourite_button_checked)
+            } else {
+                colorResource(R.color.favourite_button_unchecked)
+            }
         }
 
         val buttonSize = dimensionResource(R.dimen.favourite_button_size)

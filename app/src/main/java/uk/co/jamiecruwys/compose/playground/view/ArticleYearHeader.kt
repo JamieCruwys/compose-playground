@@ -6,6 +6,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,7 +17,7 @@ fun ArticleYearHeader(year: String, modifier: Modifier = Modifier) {
     Box(modifier) {
         Row(
             Modifier
-                .background(Color.Blue)
+                .background(colorResource(R.color.article_year_header_background))
                 .fillMaxWidth()
                 .padding(
                     horizontal = dimensionResource(R.dimen.article_year_header_horizontal_padding),
@@ -25,7 +26,7 @@ fun ArticleYearHeader(year: String, modifier: Modifier = Modifier) {
         ) {
             Text(
                 year,
-                color = Color.White,
+                color = colorResource(R.color.article_year_header_text_color),
                 fontWeight = FontWeight.Bold
             )
         }

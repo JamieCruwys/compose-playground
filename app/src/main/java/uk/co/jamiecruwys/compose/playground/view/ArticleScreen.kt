@@ -6,14 +6,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uk.co.jamiecruwys.compose.playground.Article
 import uk.co.jamiecruwys.compose.playground.repository.ArticleRepository
+import uk.co.jamiecruwys.compose.playground.R
 
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi
@@ -39,7 +39,10 @@ fun ArticleScreen(
         Column {
             TopAppBar(
                 title = {
-                    Text("Items example", color = Color.White)
+                    Text(
+                        "Items example",
+                        color = colorResource(R.color.appbar_text_color)
+                    )
                 },
                 actions = {
                     actions.forEach { action ->
