@@ -10,12 +10,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import uk.co.jamiecruwys.compose.playground.Article
+import uk.co.jamiecruwys.compose.playground.R
 
 @Composable
 fun ArticleItem(
@@ -29,22 +30,27 @@ fun ArticleItem(
             val typography = MaterialTheme.typography
             Card(
                 modifier = Modifier
-                    .padding(16.dp),
-                elevation = 6.dp,
+                    .padding(dimensionResource(R.dimen.article_item_card_padding)),
+                elevation = dimensionResource(R.dimen.article_item_card_elevation),
             ) {
                 Column {
                     Image(
-                        painter = painterResource(uk.co.jamiecruwys.compose.playground.R.drawable.header),
-                        contentDescription = stringResource(uk.co.jamiecruwys.compose.playground.R.string.image_content_description),
+                        painter = painterResource(R.drawable.header),
+                        contentDescription = stringResource(R.string.image_content_description),
                         modifier = Modifier
-                            .height(180.dp)
+                            .height(dimensionResource(R.dimen.article_item_image_height))
                             .fillMaxWidth()
-                            .clip(shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)),
+                            .clip(
+                                shape = RoundedCornerShape(
+                                    topStart = dimensionResource(R.dimen.article_item_top_corner_rounding),
+                                    topEnd = dimensionResource(R.dimen.article_item_top_corner_rounding),
+                                )
+                            ),
                         contentScale = ContentScale.Crop,
                     )
                     Row {
                         Column(modifier = Modifier
-                            .padding(16.dp)
+                            .padding(dimensionResource(R.dimen.article_item_content_padding))
                             .weight(8f)
                         ) {
                             Text(
@@ -53,19 +59,29 @@ fun ArticleItem(
                                 maxLines = 2,
                                 overflow = TextOverflow.Ellipsis,
                             )
-                            Spacer(Modifier.height(4.dp))
+                            Spacer(
+                                Modifier.height(
+                                    dimensionResource(R.dimen.article_item_text_spacer_height)
+                                )
+                            )
                             Text(
                                 text = article.subtitle,
                                 style = typography.body2,
                             )
-                            Spacer(Modifier.height(4.dp))
+                            Spacer(
+                                Modifier.height(
+                                    dimensionResource(R.dimen.article_item_text_spacer_height)
+                                )
+                            )
                             Text(
                                 text = article.date,
                                 style = typography.body2,
                             )
                         }
                         Column(modifier = Modifier
-                            .padding(8.dp)
+                            .padding(
+                                dimensionResource(R.dimen.article_item_favourite_button_padding)
+                            )
                             .weight(2f)
                         ) {
                             FavouriteButton(isChecked = favourite.value) {

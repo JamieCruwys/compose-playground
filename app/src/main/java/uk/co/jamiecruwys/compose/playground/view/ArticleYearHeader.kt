@@ -6,10 +6,10 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import uk.co.jamiecruwys.compose.playground.R
 
 @Composable
 fun ArticleYearHeader(year: String, modifier: Modifier = Modifier) {
@@ -18,7 +18,10 @@ fun ArticleYearHeader(year: String, modifier: Modifier = Modifier) {
             Modifier
                 .background(Color.Blue)
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 12.dp)
+                .padding(
+                    horizontal = dimensionResource(R.dimen.article_year_header_horizontal_padding),
+                    vertical = dimensionResource(R.dimen.article_year_header_vertical_padding),
+                )
         ) {
             Text(
                 year,

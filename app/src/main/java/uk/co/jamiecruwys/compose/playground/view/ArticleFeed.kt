@@ -17,10 +17,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import uk.co.jamiecruwys.compose.playground.Article
+import uk.co.jamiecruwys.compose.playground.R
 
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
@@ -35,7 +36,9 @@ fun ArticleFeed(
 
         LazyColumn(
             state = listState,
-            contentPadding = PaddingValues(bottom = 80.dp),
+            contentPadding = PaddingValues(
+                bottom = dimensionResource(id = R.dimen.article_feed_content_padding_bottom)
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .testTag("ArticleFeed")
@@ -64,7 +67,11 @@ fun ArticleFeed(
             exit = fadeOut(),
             modifier = Modifier.align(Alignment.BottomCenter)
         ) {
-            ScrollToTopButton(modifier = Modifier.padding(16.dp)) {
+            ScrollToTopButton(
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.article_feed_scroll_to_top_button_padding)
+                )
+            ) {
                 scope.launch {
                     listState.animateScrollToItem(0)
                 }

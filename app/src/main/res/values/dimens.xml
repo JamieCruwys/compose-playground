@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="article_feed_content_padding_bottom">80dp</dimen>
+    <dimen name="article_feed_scroll_to_top_button_padding">16dp</dimen>
+    <dimen name="articles_empty_content_padding">16dp</dimen>
+    <dimen name="article_item_card_padding">16dp</dimen>
+    <dimen name="article_item_card_elevation">6dp</dimen>
+    <dimen name="article_item_image_height">180dp</dimen>
+    <dimen name="article_item_top_corner_rounding">4dp</dimen>
+    <dimen name="article_item_content_padding">16dp</dimen>
+    <dimen name="article_item_text_spacer_height">4dp</dimen>
+    <dimen name="article_item_favourite_button_padding">8dp</dimen>
+    <dimen name="article_year_header_horizontal_padding">16dp</dimen>
+    <dimen name="article_year_header_vertical_padding">12dp</dimen>
+    <dimen name="favourite_button_size">30dp</dimen>
+    <dimen name="favourite_button_size_2">35dp</dimen>
+    <dimen name="favourite_button_size_3">40dp</dimen>
+    <dimen name="favourite_button_size_4">35dp</dimen>
+</resources>
