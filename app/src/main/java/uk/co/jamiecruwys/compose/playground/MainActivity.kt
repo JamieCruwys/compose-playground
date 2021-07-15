@@ -22,17 +22,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreen(
-                articleScreen = {
-                    ArticleScreen(articleScreenViewModel)
-                },
-                favouritesScreen = {
-                    FavouritesScreen()
-                },
-                profileScreen = {
-                    ProfileScreen()
-                }
-            )
+            CustomTheme {
+                MainScreen(
+                    articleScreen = {
+                        ArticleScreen(articleScreenViewModel)
+                    },
+                    favouritesScreen = {
+                        FavouritesScreen()
+                    },
+                    profileScreen = {
+                        ProfileScreen()
+                    }
+                )
+            }
         }
     }
 }
