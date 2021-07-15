@@ -69,7 +69,10 @@ fun ArticleFeed(
         ) {
             ScrollToTopButton(
                 modifier = Modifier.padding(
-                    dimensionResource(id = R.dimen.article_feed_scroll_to_top_button_padding)
+                    start = dimensionResource(id = R.dimen.article_feed_scroll_to_top_button_padding_horizontal),
+                    end = dimensionResource(id = R.dimen.article_feed_scroll_to_top_button_padding_horizontal),
+                    top = dimensionResource(id = R.dimen.article_feed_scroll_to_top_button_padding_top),
+                    bottom = dimensionResource(id = R.dimen.article_feed_scroll_to_top_button_padding_bottom),
                 )
             ) {
                 scope.launch {
