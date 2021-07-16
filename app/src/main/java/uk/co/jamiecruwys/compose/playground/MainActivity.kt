@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import dagger.hilt.android.AndroidEntryPoint
-import uk.co.jamiecruwys.compose.playground.view.*
+import uk.co.jamiecruwys.compose.playground.ui.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CustomTheme {
+            PlaygroundTheme {
                 MainScreen(
                     articleScreen = {
                         ArticleScreen(articleScreenViewModel)

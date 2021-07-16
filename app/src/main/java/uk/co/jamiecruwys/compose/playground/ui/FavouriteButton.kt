@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.view
+package uk.co.jamiecruwys.compose.playground.ui
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.animateColor

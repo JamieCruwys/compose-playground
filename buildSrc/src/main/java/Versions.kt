@@ -15,6 +15,7 @@ object Versions {
     const val COMPOSE_ACTIVITY = "1.3.0-rc01"
     const val COMPOSE_VIEWMODEL = "1.0.0-alpha07"
     const val COMPOSE_NAVIGATION = "2.4.0-alpha04"
+    const val COMPOSE_THEME_ADAPTER = "1.0.0-rc02"
     const val CORE_KTX = "1.6.0"
     const val APPCOMPAT = "1.3.0"
     const val MATERIAL = "1.4.0"
@@ -24,4 +25,5 @@ object Versions {
     const val ESPRESSO = "3.4.0"
     const val DAGGER_HILT = "2.37"
     const val ANDROIDX_DAGGER_HILT_COMPILER = "1.0.0"
+    const val ACCOMPANIST_SYSTEM_UI_CONTROLLER = "0.14.0"
 }

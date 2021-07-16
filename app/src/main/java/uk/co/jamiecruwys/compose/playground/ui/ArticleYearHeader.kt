@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.view
+package uk.co.jamiecruwys.compose.playground.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

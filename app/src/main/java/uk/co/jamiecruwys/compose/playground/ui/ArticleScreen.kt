@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.view
+package uk.co.jamiecruwys.compose.playground.ui
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -39,10 +39,7 @@ fun ArticleScreen(
         Column {
             TopAppBar(
                 title = {
-                    Text(
-                        "Items example",
-                        color = colorResource(R.color.appbar_text_color)
-                    )
+                    Text("Items example")
                 },
                 actions = {
                     actions.forEach { action ->

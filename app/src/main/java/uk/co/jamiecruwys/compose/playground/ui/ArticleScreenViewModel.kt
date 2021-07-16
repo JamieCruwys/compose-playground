@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.view
+package uk.co.jamiecruwys.compose.playground.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.view
+package uk.co.jamiecruwys.compose.playground.ui
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi

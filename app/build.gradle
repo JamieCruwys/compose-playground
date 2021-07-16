@@ -77,8 +77,12 @@ dependencies {
     implementation Libs.COMPOSE_ACTIVITY
     implementation Libs.COMPOSE_VIEWMODEL
     implementation Libs.COMPOSE_LIVEDATA
+    implementation Libs.COMPOSE_THEME_ADAPTER
     androidTestImplementation Libs.COMPOSE_UI_TEST_JUNIT
     debugImplementation Libs.COMPOSE_UI_TEST_MANIFEST
+
+    // Accompanist
+    implementation Libs.ACCOMPANIST_SYSTEM_UI_CONTROLLER
 
     // Testing
     testImplementation Libs.JUNIT

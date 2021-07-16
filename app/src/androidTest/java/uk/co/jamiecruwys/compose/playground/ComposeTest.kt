@@ -7,7 +7,7 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import uk.co.jamiecruwys.compose.playground.view.ArticleFeed
+import uk.co.jamiecruwys.compose.playground.ui.ArticleFeed
 
 class ComposeTest {
     @get:Rule

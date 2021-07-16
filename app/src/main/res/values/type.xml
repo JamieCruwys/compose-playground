@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Use TextAppearance.AppCompat.Subhead as parent to avoid inheriting letterSpacing -->
+    <style name="TextAppearance.Sample.Subtitle1"
+        parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Sample.Caption"
+        parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+</resources>
