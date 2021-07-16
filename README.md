@@ -30,3 +30,7 @@ Jetpack Compose playground
 ## Compose YouTube videos
 * [Declarative UI Patterns (Google I/O'19)](https://www.youtube.com/watch?v=VsStyq4Lzxo)
 * [Android Developers - Compose videos](https://www.youtube.com/c/AndroidDevelopers/search?query=compose)
+
+## Useful libraries
+* [Accompanist Guide](https://google.github.io/accompanist/)
+* [Accompanist GitHub](https://github.com/google/accompanist)
