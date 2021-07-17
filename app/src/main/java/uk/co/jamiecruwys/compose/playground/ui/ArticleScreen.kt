@@ -6,14 +6,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import uk.co.jamiecruwys.compose.playground.Article
-import uk.co.jamiecruwys.compose.playground.R
-import uk.co.jamiecruwys.compose.playground.repository.ArticleRepository
+import uk.co.jamiecruwys.compose.playground.domain.Article
+import uk.co.jamiecruwys.compose.playground.data.NetworkArticleRepository
+import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
+import uk.co.jamiecruwys.compose.playground.domain.Resource
 
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi
@@ -21,17 +21,17 @@ import uk.co.jamiecruwys.compose.playground.repository.ArticleRepository
 fun ArticleScreen(
     viewModel: ArticleScreenViewModel = viewModel(),
 ) {
-    val articles = viewModel.articles.observeAsState()
+    val state = viewModel.state.observeAsState()
 
     val actions = listOf(
         MenuAction.GroupByYear {
-            viewModel.groupByYear()
+            viewModel.load(filter = ArticleFilter.YEAR)
         },
         MenuAction.Filter {
-            viewModel.load()
+            viewModel.load(filter = ArticleFilter.NONE)
         },
         MenuAction.Empty {
-            viewModel.showEmpty()
+            viewModel.load(filter = ArticleFilter.EMPTY)
         }
     )
 
@@ -53,11 +53,23 @@ fun ArticleScreen(
                 }
             )
 
-            articles.value.apply {
-                if (isNullOrEmpty()) {
-                    ArticleEmptyState()
-                } else {
-                    ArticleFeed(this)
+            state.value.apply {
+                when (this) {
+                    is Resource.Loading -> {
+                        ArticleLoadingState()
+                    }
+                    is Resource.Loaded -> {
+                        data.apply {
+                            if (isNullOrEmpty()) {
+                                ArticleEmptyState()
+                            } else {
+                                ArticleFeed(data = this)
+                            }
+                        }
+                    }
+                    is Resource.Failed -> {
+                        ArticleErrorState()
+                    }
                 }
             }
         }
@@ -69,40 +81,5 @@ fun ArticleScreen(
 @Preview
 @Composable
 fun ArticleScreenEmptyPreview() {
-    Column {
-        ArticleScreen(
-            ArticleScreenViewModel(object: ArticleRepository() {
-                override fun getArticles(): List<Article> = listOf()
-            })
-        )
-    }
-}
-
-@ExperimentalAnimationApi
-@ExperimentalFoundationApi
-@Preview
-@Composable
-fun ArticleScreenItemsPreview() {
-    Column {
-        ArticleScreen(
-            ArticleScreenViewModel(object: ArticleRepository() {
-                override fun getArticles(): List<Article> = listOf(
-                    Article(
-                        "Title 1",
-                        "Subtitle 1",
-                        "Date 1",
-                        2020,
-                        null
-                    ),
-                    Article(
-                        "Title 2",
-                        "Subtitle 2",
-                        "Date 2",
-                        2021,
-                        null
-                    )
-                )
-            })
-        )
-    }
+    ArticleScreen()
 }

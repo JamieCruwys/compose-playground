@@ -3,38 +3,66 @@ package uk.co.jamiecruwys.compose.playground.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import uk.co.jamiecruwys.compose.playground.Article
-import uk.co.jamiecruwys.compose.playground.repository.ArticleRepository
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
+import uk.co.jamiecruwys.compose.playground.domain.Article
+import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
+import uk.co.jamiecruwys.compose.playground.domain.LoadArticlesInteractor
+import uk.co.jamiecruwys.compose.playground.domain.Resource
 import javax.inject.Inject
 
 @HiltViewModel
 class ArticleScreenViewModel @Inject constructor(
-    private val repository: ArticleRepository
+    private val interactor: LoadArticlesInteractor
 ): ViewModel() {
-    private val _articles = MutableLiveData<Map<String?, List<Article>>>()
-    val articles: LiveData<Map<String?, List<Article>>> = _articles
+    private val _state = MutableLiveData<Resource<Map<String?, List<Article>>>>()
+    val state: LiveData<Resource<Map<String?, List<Article>>>> = _state
 
     init {
         load()
     }
 
-    fun load() {
-        val items = mutableMapOf<String?, List<Article>>(
-            Pair(null, getArticles())
-        )
-        _articles.postValue(items)
+    fun load(
+        filter: ArticleFilter = ArticleFilter.NONE
+    ) {
+        viewModelScope.launch {
+            loadArticles().collect {
+                when (it) {
+                    is Resource.Loading -> {
+                        _state.postValue(Resource.Loading)
+                    }
+                    is Resource.Loaded -> {
+                        val filteredData = filterData(filter, it.data)
+                        _state.postValue(Resource.Loaded(filteredData))
+                    }
+                    is Resource.Failed -> {
+                        _state.postValue(Resource.Failed)
+                    }
+                }
+            }
+        }
     }
 
-    fun groupByYear() {
-        val articles = repository.getArticles()
-        val grouped: Map<String?, List<Article>> = articles.groupBy { it.year.toString() }
-        _articles.postValue(grouped)
+    private fun filterData(
+        filter: ArticleFilter = ArticleFilter.NONE,
+        articles: List<Article>?
+    ): Map<String?, List<Article>> = when (filter) {
+        ArticleFilter.NONE -> {
+            mutableMapOf(
+                Pair(null, articles ?: emptyList())
+            )
+        }
+        ArticleFilter.YEAR -> {
+            articles?.groupBy { article ->
+                article.year.toString()
+            } ?: mutableMapOf()
+        }
+        ArticleFilter.EMPTY -> {
+            mutableMapOf()
+        }
     }
 
-    fun showEmpty() {
-        _articles.postValue(mutableMapOf())
-    }
-
-    private fun getArticles() = repository.getArticles()
+    suspend fun loadArticles() = interactor.loadArticles()
 }

@@ -1,10 +1,11 @@
-package uk.co.jamiecruwys.compose.playground.repository
+package uk.co.jamiecruwys.compose.playground.data
 
-import uk.co.jamiecruwys.compose.playground.Article
+import uk.co.jamiecruwys.compose.playground.domain.Article
 import javax.inject.Inject
 
-open class ArticleRepository @Inject constructor() {
-    open fun getArticles(): List<Article> = listOf(
+class MockNetworkArticlesService @Inject constructor() : ArticleService {
+
+    override suspend fun articles(): List<Article> = listOf(
         Article(
             title = "One title",
             subtitle = "One subtitle",

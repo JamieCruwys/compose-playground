@@ -20,7 +20,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.coroutines.launch
-import uk.co.jamiecruwys.compose.playground.Article
+import uk.co.jamiecruwys.compose.playground.domain.Article
 import uk.co.jamiecruwys.compose.playground.R
 
 @ExperimentalAnimationApi

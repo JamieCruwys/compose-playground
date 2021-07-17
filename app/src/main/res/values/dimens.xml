@@ -5,6 +5,8 @@
     <dimen name="article_feed_scroll_to_top_button_padding_top">16dp</dimen>
     <dimen name="article_feed_scroll_to_top_button_padding_bottom">72dp</dimen>
     <dimen name="articles_empty_content_padding">16dp</dimen>
+    <dimen name="articles_error_content_padding">16dp</dimen>
+    <dimen name="articles_loading_content_padding">16dp</dimen>
     <dimen name="article_item_card_padding">16dp</dimen>
     <dimen name="article_item_card_elevation">6dp</dimen>
     <dimen name="article_item_image_height">180dp</dimen>

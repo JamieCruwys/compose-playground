@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground
+package uk.co.jamiecruwys.compose.playground.domain
 
 data class Article(
     val title: String,
