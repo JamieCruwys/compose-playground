@@ -2,7 +2,6 @@ package uk.co.jamiecruwys.compose.playground.di
 
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import uk.co.jamiecruwys.compose.playground.data.ArticleService

@@ -1,0 +1,9 @@
+android {
+    lintOptions {
+        lintConfig file("$project.rootDir/quality/lint/lint.xml")
+        warningsAsErrors true
+        xmlReport true
+        checkDependencies false
+        abortOnError true
+    }
+}

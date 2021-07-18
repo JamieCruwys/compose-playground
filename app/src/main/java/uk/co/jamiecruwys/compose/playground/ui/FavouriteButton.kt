@@ -2,7 +2,13 @@ package uk.co.jamiecruwys.compose.playground.ui
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.animateColor
-import androidx.compose.animation.core.*
+import androidx.compose.animation.core.FastOutLinearInEasing
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateDp
+import androidx.compose.animation.core.keyframes
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconToggleButton
@@ -21,6 +27,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import uk.co.jamiecruwys.compose.playground.R
 
+@Suppress("MagicNumber")
 @SuppressLint("UnusedTransitionTargetStateParameter")
 @Composable
 fun FavouriteButton(isChecked: Boolean, onClick: () -> Unit) {

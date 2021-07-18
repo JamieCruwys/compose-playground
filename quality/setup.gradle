@@ -1,0 +1,6 @@
+apply from: "${rootDir}/quality/git-hooks/githooks.gradle"
+apply from: "${rootDir}/quality/detekt/detekt.gradle"
+apply from: "${rootDir}/quality/spotless/spotless.gradle"
+apply from: "${rootDir}/quality/kotlinter/kotlinter.gradle"
+apply from: "${rootDir}/quality/lint/lint.gradle"
+apply from: "${rootDir}/quality/jacoco/jacoco.gradle"

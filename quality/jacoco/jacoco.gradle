@@ -1,0 +1,127 @@
+apply plugin: 'jacoco'
+apply plugin: 'com.github.dawnwords.jacoco.badge'
+
+jacocoBadgeGenSetting {
+    // We can only have Jacoco read from one report, so let's go with the release build
+    jacocoReportPath  "$buildDir/reports/jacoco/releaseUnitTestCoverage/testReleaseUnitTestCoverage.xml"
+    readmePath "README.md"
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*'] // see related issue https://github.com/gradle/gradle/issues/5184#issuecomment-457865951
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+project.afterEvaluate {
+    variants().all { variant ->
+        def variantName = variant.name
+        def testTaskName = "test${variantName.capitalize()}UnitTest"
+        def coverageTaskName = "${testTaskName}Coverage"
+        def coverageVerificationTaskName = "${coverageTaskName}Verification"
+
+        def fileFilter = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            '**/com/example/databinding/*',
+            '**/com/example/generated/callback/*',
+            '**/android/databinding/*',
+            '**/androidx/databinding/*',
+            '**/DataBinderMapperImpl*.*',
+            '**/di/module/*',
+            '**/*MapperImpl*.*',
+            '**/*$ViewInjector*.*',
+            '**/*$ViewBinder*.*',
+            '**/BuildConfig.*',
+            '**/*Component*.*',
+            '**/*BR*.*',
+            '**/Manifest*.*',
+            '**/*$Lambda$*.*',
+            '**/*Companion*.*',
+            '**/*Module.*', /* filtering Dagger modules classes */
+            '**/*Dagger*.*',/* filtering Dagger-generated classes */
+            '**/*MembersInjector*.*',
+            '**/*_Factory*.*',
+            '**/*_Provide*Factory*.*',
+            '**/*Extensions*.*',
+            '**/*$Result.*', /* filtering `sealed` and `data` classes */
+            '**/*$Result$*.*', /* filtering `sealed` and `data` classes */
+            '**/*Args*.*', /* filtering Navigation Component generated classes */
+            '**/*Directions*.*', /* filtering Navigation Component generated classes */
+        ]
+        def classDirs = [
+            fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: fileFilter),
+        ]
+
+        def coverageSourceDirs = [
+            "$project.rootDir/app/src/main/java",
+            "$project.rootDir/app/src/main/kotlin",
+            "$project.projectDir/src/${variantName}/java",
+            "$project.projectDir/src/${variantName}/kotlin",
+        ]
+
+        def uiTestsData = fileTree(dir: "${buildDir}/outputs/code_coverage/${variantName}AndroidTest/connected/", includes: ["**/*.ec"])
+        def executionDirs = [
+            "$project.buildDir/jacoco/${testTaskName}.exec",
+            uiTestsData,
+        ]
+
+        tasks.create(name: coverageTaskName, type: JacocoReport, dependsOn: testTaskName) {
+            group = "Reporting"
+            description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
+
+            reports {
+                html.enabled = true
+                xml.enabled = true
+                csv.enabled = false
+            }
+
+            classDirectories.setFrom(files(classDirs))
+            additionalSourceDirs.setFrom(files(coverageSourceDirs))
+            sourceDirectories.setFrom(files(coverageSourceDirs))
+            executionData(files(executionDirs))
+        }
+
+        tasks.create(name: coverageVerificationTaskName, type: JacocoCoverageVerification, dependsOn: coverageTaskName) {
+            group = "Reporting"
+            description = "Verify code coverage for the $variantName build."
+
+            violationRules {
+                rule {
+                    limit {
+                        // TODO: Set this to a reasonable code coverage percentage
+                        minimum = 0.00
+                    }
+                }
+            }
+
+            classDirectories.setFrom(files(classDirs))
+            additionalSourceDirs.setFrom(files(coverageSourceDirs))
+            sourceDirectories.setFrom(files(coverageSourceDirs))
+            executionData(files(executionDirs))
+        }
+
+        // Run coverage verification when 'check' is run.
+        // This will run code coverage and verify the results
+        // against the rules of code coverage percentage
+        check.dependsOn "${coverageVerificationTaskName}"
+    }
+}
+
+// We can only have Jacoco read from one report, so let's go with Italia release.
+// Make sure we generate the code coverage report before we update the badges
+generateJacocoBadge.dependsOn 'testItaliaReleaseUnitTestCoverage'
+
+def variants() {
+    if (project.android.hasProperty('libraryVariants')) {
+        return project.android.libraryVariants
+    } else {
+        return project.android.applicationVariants
+    }
+}

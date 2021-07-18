@@ -3,15 +3,17 @@ package uk.co.jamiecruwys.compose.playground.ui
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.*
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import uk.co.jamiecruwys.compose.playground.domain.Article
-import uk.co.jamiecruwys.compose.playground.data.NetworkArticleRepository
 import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.Resource
 

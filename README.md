@@ -34,3 +34,10 @@ Jetpack Compose playground
 ## Useful libraries
 * [Accompanist Guide](https://google.github.io/accompanist/)
 * [Accompanist GitHub](https://github.com/google/accompanist)
+
+## How to update Gradle version
+
+Read the docs:
+https://docs.gradle.org/current/userguide/gradle_wrapper.html
+
+`./gradlew wrapper --gradle-version 7.1.1`

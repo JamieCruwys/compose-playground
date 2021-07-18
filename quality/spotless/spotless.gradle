@@ -1,0 +1,11 @@
+spotless {
+    kotlin {
+        target("**/*.kt")
+    }
+    kotlinGradle {
+        target '*.gradle.kts'
+    }
+    format("xml") {
+        target("**/*.xml")
+    }
+}

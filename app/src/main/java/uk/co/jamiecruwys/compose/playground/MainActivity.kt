@@ -1,14 +1,20 @@
 package uk.co.jamiecruwys.compose.playground
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import dagger.hilt.android.AndroidEntryPoint
-import uk.co.jamiecruwys.compose.playground.ui.*
+import uk.co.jamiecruwys.compose.playground.ui.ArticleScreen
+import uk.co.jamiecruwys.compose.playground.ui.ArticleScreenViewModel
+import uk.co.jamiecruwys.compose.playground.ui.FavouritesScreen
+import uk.co.jamiecruwys.compose.playground.ui.MainScreen
+import uk.co.jamiecruwys.compose.playground.ui.PlaygroundTheme
+import uk.co.jamiecruwys.compose.playground.ui.ProfileScreen
 
+@Suppress("ForbiddenComment")
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     /**

@@ -2,8 +2,13 @@ package uk.co.jamiecruwys.compose.playground
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.ui.test.*
+import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.printToLog
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

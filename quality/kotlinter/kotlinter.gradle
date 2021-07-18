@@ -1,0 +1,6 @@
+kotlinter {
+    ignoreFailures = false
+    reporters = ["html", "checkstyle"]
+    experimentalRules = false
+    disabledRules = []
+}
