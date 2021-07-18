@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ArticleScreenViewModel @Inject constructor(
     private val interactor: LoadArticlesInteractor
-): ViewModel() {
+) : ViewModel() {
     private val _state = MutableLiveData<Resource<Map<String?, List<Article>>>>()
     val state: LiveData<Resource<Map<String?, List<Article>>>> = _state
 

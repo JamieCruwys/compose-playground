@@ -63,7 +63,7 @@ class ComposeTest {
     }
 
     companion object {
-        private val DUMMY_ARTICLES = listOf(
+        private val DUMMY_ARTICLES_ITEMS = listOf(
             Article(
                 title = "One title",
                 subtitle = "One subtitle",
@@ -94,6 +94,9 @@ class ComposeTest {
                 date = "December 2020",
                 year = 2020
             ),
+        )
+        private val DUMMY_ARTICLES = mutableMapOf<String?, List<Article>>(
+            Pair(null, DUMMY_ARTICLES_ITEMS)
         )
     }
 }
