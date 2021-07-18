@@ -35,6 +35,40 @@ Jetpack Compose playground
 * [Accompanist Guide](https://google.github.io/accompanist/)
 * [Accompanist GitHub](https://github.com/google/accompanist)
 
+## Code quality
+
+The following code quality tools are used:
+
+* [Detekt](https://github.com/detekt/detekt) - Static code analysis for Kotlin code
+* [Spotless](https://github.com/diffplug/spotless) - Formats code
+* [Kotlinter](https://github.com/jeremymailen/kotlinter-gradle) - Static code analysis using [ktlint](https://github.com/pinterest/ktlint)
+* [Android lint](http://tools.android.com/tips/lint) - scans Android code for bugs
+* [Jacoco](https://github.com/jacoco/jacoco) - Code coverage
+* [Jacoco Badge](https://github.com/dawnwords/jacoco-badge-gradle-plugin) - Code coverage badge
+
+How to run the code quality tools:
+
+* Run `./gradlew check` to run all checks
+* Run `./gradlew detekt` to run Detekt
+* Run `./gradlew spotlessCheck` to run Spotless
+* Run `./gradlew spotlessApply` to automatically apply Spotless suggestions
+* Run `./gradlew lintKotlin` to run ktlint via Kotlinter
+* Run `./gradlew lint` to run Android lint
+
+Generating code coverage tasks:
+
+* Run `./gradlew testDebugUnitTestCoverage` to generate debug test coverage
+* Run `./gradlew testReleaseUnitTestCoverage` to generate release  test coverage
+
+Code coverage verification tasks:
+
+* Run `./gradlew testDebugUnitTestCoverageVerification` to generate debug test coverage and verify the results
+* Run `./gradlew testReleaseUnitTestCoverageVerification` to generate release test coverage and verify the results
+
+Code coverage badge task:
+
+* Run `./generateJacocoBadge` to update the code coverage badges in this readme. It can only be based on one report, so I chose the release build.
+
 ## How to update Gradle version
 
 Read the docs:
