@@ -2,16 +2,13 @@
 <resources>
     <style name="ShapeAppearance.Sample.SmallComponent"
         parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamily">cut</item>
     </style>
 
     <style name="ShapeAppearance.Sample.MediumComponent"
         parent="ShapeAppearance.MaterialComponents.MediumComponent">
-        <item name="cornerFamily">cut</item>
     </style>
 
     <style name="ShapeAppearance.Sample.LargeComponent"
         parent="ShapeAppearance.MaterialComponents.LargeComponent">
-        <item name="cornerFamily">cut</item>
     </style>
 </resources>
