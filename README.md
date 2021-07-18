@@ -1,10 +1,6 @@
 # compose-playground
 Jetpack Compose playground
 
-## TODO
-* [ ] Add detekt
-* [ ] Add spotless and ktlint
-
 ## Reading list
 * [x] [Compose docs](https://developer.android.com/jetpack/compose/testing)
 * [x] [Compose docs - semantics](https://developer.android.com/jetpack/compose/accessibility#semantics)
