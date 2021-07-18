@@ -24,5 +24,14 @@
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Shapes. -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Sample.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Sample.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Sample.LargeComponent</item>
+
+        <!-- Types. -->
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Sample.Subtitle1</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Sample.Caption</item>
     </style>
 </resources>
