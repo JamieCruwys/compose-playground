@@ -13,7 +13,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import uk.co.jamiecruwys.compose.playground.domain.Article
-import uk.co.jamiecruwys.compose.playground.ui.ArticleFeed
+import uk.co.jamiecruwys.compose.playground.ui.article.list.ArticleFeed
 
 class ComposeTest {
     @get:Rule

@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.bottomnav
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons

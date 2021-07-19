@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.article.list
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import uk.co.jamiecruwys.compose.playground.R
 import uk.co.jamiecruwys.compose.playground.domain.Article
+import uk.co.jamiecruwys.compose.playground.ui.component.FavouriteButton
 
 @Suppress("LongMethod", "MagicNumber")
 @Composable

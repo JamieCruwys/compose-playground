@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.article
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import uk.co.jamiecruwys.compose.playground.R
 
 @Composable
-fun ArticleEmptyState(
+fun ArticleErrorState(
     modifier: Modifier = Modifier
 ) {
     Box(modifier) {
@@ -24,10 +24,10 @@ fun ArticleEmptyState(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                "No articles available",
+                "Sorry, there has been an error. Please try again.",
                 modifier = Modifier.padding(
                     dimensionResource(
-                        id = R.dimen.articles_empty_content_padding
+                        id = R.dimen.articles_error_content_padding
                     )
                 )
             )
@@ -37,6 +37,6 @@ fun ArticleEmptyState(
 
 @Preview
 @Composable
-fun ArticleEmptyStatePreview() {
-    ArticleEmptyState()
+fun ArticleErrorStatePreview() {
+    ArticleErrorState()
 }

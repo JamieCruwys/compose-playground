@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.FloatingActionButton

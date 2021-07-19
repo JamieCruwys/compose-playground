@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import dagger.hilt.android.AndroidEntryPoint
-import uk.co.jamiecruwys.compose.playground.ui.ArticleScreen
-import uk.co.jamiecruwys.compose.playground.ui.ArticleScreenViewModel
-import uk.co.jamiecruwys.compose.playground.ui.FavouritesScreen
-import uk.co.jamiecruwys.compose.playground.ui.MainScreen
-import uk.co.jamiecruwys.compose.playground.ui.PlaygroundTheme
-import uk.co.jamiecruwys.compose.playground.ui.ProfileScreen
+import uk.co.jamiecruwys.compose.playground.ui.article.ArticleScreen
+import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
+import uk.co.jamiecruwys.compose.playground.ui.favourite.FavouritesScreen
+import uk.co.jamiecruwys.compose.playground.ui.main.MainScreen
+import uk.co.jamiecruwys.compose.playground.ui.theme.PlaygroundTheme
+import uk.co.jamiecruwys.compose.playground.ui.profile.ProfileScreen
 
 @Suppress("ForbiddenComment")
 @AndroidEntryPoint

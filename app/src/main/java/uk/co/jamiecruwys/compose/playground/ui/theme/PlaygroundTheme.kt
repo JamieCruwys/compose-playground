@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.theme
 
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme

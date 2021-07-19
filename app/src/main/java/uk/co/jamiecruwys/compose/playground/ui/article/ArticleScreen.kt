@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.article
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -16,6 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.Resource
+import uk.co.jamiecruwys.compose.playground.ui.article.list.ArticleFeed
+import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi
@@ -26,13 +28,13 @@ fun ArticleScreen(
     val state = viewModel.state.observeAsState()
 
     val actions = listOf(
-        MenuAction.GroupByYear {
+        ArticleScreenMenuAction.GroupByYear {
             viewModel.load(filter = ArticleFilter.YEAR)
         },
-        MenuAction.Filter {
+        ArticleScreenMenuAction.Filter {
             viewModel.load(filter = ArticleFilter.NONE)
         },
-        MenuAction.Empty {
+        ArticleScreenMenuAction.Empty {
             viewModel.load(filter = ArticleFilter.EMPTY)
         }
     )

@@ -1,4 +1,4 @@
-package uk.co.jamiecruwys.compose.playground.ui
+package uk.co.jamiecruwys.compose.playground.ui.profile
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun FavouritesScreen() {
+fun ProfileScreen() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -19,12 +19,12 @@ fun FavouritesScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Favourites screen")
+        Text("Profile screen")
     }
 }
 
 @Preview
 @Composable
-fun FavouritesScreenPreview() {
-    FavouritesScreen()
+fun ProfileScreenPreview() {
+    ProfileScreen()
 }
