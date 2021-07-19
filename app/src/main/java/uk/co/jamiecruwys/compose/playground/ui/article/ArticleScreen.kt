@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import uk.co.jamiecruwys.compose.playground.R
 import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.Resource
 import uk.co.jamiecruwys.compose.playground.ui.article.list.ArticleFeed
@@ -39,41 +40,39 @@ fun ArticleScreen(
         }
     )
 
-    MaterialTheme {
-        Column {
-            TopAppBar(
-                title = {
-                    Text("Items example")
-                },
-                actions = {
-                    actions.forEach { action ->
-                        IconButton(action.action) {
-                            Icon(
-                                painter = painterResource(id = action.icon),
-                                contentDescription = stringResource(id = action.label)
-                            )
+    Column {
+        TopAppBar(
+            title = {
+                Text(stringResource(R.string.article_app_bar_title))
+            },
+            actions = {
+                actions.forEach { action ->
+                    IconButton(action.action) {
+                        Icon(
+                            painter = painterResource(id = action.icon),
+                            contentDescription = stringResource(id = action.label)
+                        )
+                    }
+                }
+            }
+        )
+
+        state.value.apply {
+            when (this) {
+                is Resource.Loading -> {
+                    ArticleLoadingState()
+                }
+                is Resource.Loaded -> {
+                    data.apply {
+                        if (isNullOrEmpty()) {
+                            ArticleEmptyState()
+                        } else {
+                            ArticleFeed(data = this)
                         }
                     }
                 }
-            )
-
-            state.value.apply {
-                when (this) {
-                    is Resource.Loading -> {
-                        ArticleLoadingState()
-                    }
-                    is Resource.Loaded -> {
-                        data.apply {
-                            if (isNullOrEmpty()) {
-                                ArticleEmptyState()
-                            } else {
-                                ArticleFeed(data = this)
-                            }
-                        }
-                    }
-                    is Resource.Failed -> {
-                        ArticleErrorState()
-                    }
+                is Resource.Failed -> {
+                    ArticleErrorState()
                 }
             }
         }
