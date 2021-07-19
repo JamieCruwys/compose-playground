@@ -8,11 +8,11 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import dagger.hilt.android.AndroidEntryPoint
 import uk.co.jamiecruwys.compose.playground.ui.article.ArticleScreen
-import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 import uk.co.jamiecruwys.compose.playground.ui.favourite.FavouritesScreen
 import uk.co.jamiecruwys.compose.playground.ui.main.MainScreen
-import uk.co.jamiecruwys.compose.playground.ui.theme.PlaygroundTheme
 import uk.co.jamiecruwys.compose.playground.ui.profile.ProfileScreen
+import uk.co.jamiecruwys.compose.playground.ui.theme.PlaygroundTheme
+import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 
 @Suppress("ForbiddenComment")
 @AndroidEntryPoint
