@@ -66,7 +66,15 @@ fun ArticleScreen(
                         if (isNullOrEmpty()) {
                             ArticleEmptyState()
                         } else {
-                            ArticleFeed(data = this)
+                            ArticleFeed(
+                                data = this,
+                                onFavourite = { id ->
+                                    viewModel.favouriteArticle(id)
+                                },
+                                onUnfavourite = { id ->
+                                    viewModel.unFavouriteArticle(id)
+                                }
+                            )
                         }
                     }
                 }

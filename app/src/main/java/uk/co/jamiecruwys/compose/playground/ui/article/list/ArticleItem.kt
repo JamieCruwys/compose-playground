@@ -26,12 +26,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import uk.co.jamiecruwys.compose.playground.R
 import uk.co.jamiecruwys.compose.playground.domain.Article
 import uk.co.jamiecruwys.compose.playground.ui.component.FavouriteButton
+import java.util.UUID
 
 @Suppress("LongMethod", "MagicNumber")
 @Composable
 fun ArticleItem(
     article: Article,
     modifier: Modifier = Modifier,
+    onFavourite: (UUID) -> Unit = {},
+    onUnfavourite: (UUID) -> Unit = {},
 ) {
     val favourite = remember { mutableStateOf(false) }
 
@@ -94,8 +97,17 @@ fun ArticleItem(
                             )
                             .weight(2f)
                     ) {
-                        FavouriteButton(isChecked = favourite.value) {
-                            favourite.value = favourite.value.not()
+                        FavouriteButton(
+                            isChecked = favourite.value,
+                        ) {
+                            val newValue = favourite.value.not()
+                            favourite.value = newValue
+
+                            if (newValue) {
+                                onFavourite.invoke(article.id)
+                            } else {
+                                onUnfavourite.invoke(article.id)
+                            }
                         }
                     }
                 }

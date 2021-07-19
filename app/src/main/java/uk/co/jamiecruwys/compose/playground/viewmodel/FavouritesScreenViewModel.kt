@@ -9,16 +9,13 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import uk.co.jamiecruwys.compose.playground.domain.Article
-import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.FavouriteArticleInteractor
-import uk.co.jamiecruwys.compose.playground.domain.LoadArticlesInteractor
 import uk.co.jamiecruwys.compose.playground.domain.Resource
 import java.util.UUID
 import javax.inject.Inject
 
 @HiltViewModel
-class ArticleScreenViewModel @Inject constructor(
-    private val loadArticlesInteractor: LoadArticlesInteractor,
+class FavouritesScreenViewModel @Inject constructor(
     private val favouriteArticlesInteractor: FavouriteArticleInteractor,
 ) : ViewModel() {
     private val _state = MutableLiveData<Resource<Map<String?, List<Article>>>>()
@@ -28,43 +25,28 @@ class ArticleScreenViewModel @Inject constructor(
         load()
     }
 
-    fun load(
-        filter: ArticleFilter = ArticleFilter.NONE
-    ) {
+    fun load() {
         viewModelScope.launch {
-            loadArticlesInteractor.loadArticles().collect {
+            favouriteArticlesInteractor.loadFavourites().collect {
                 when (it) {
                     is Resource.Loading -> {
                         _state.postValue(Resource.Loading)
                     }
                     is Resource.Loaded -> {
-                        val filteredData = filterData(filter, it.data)
-                        _state.postValue(Resource.Loaded(filteredData))
+                        val data: Map<String?, List<Article>> = if (it.data.isEmpty()) {
+                            emptyMap()
+                        } else {
+                            mutableMapOf(
+                                Pair(null, it.data)
+                            )
+                        }
+                        _state.postValue(Resource.Loaded(data))
                     }
                     is Resource.Failed -> {
                         _state.postValue(Resource.Failed)
                     }
                 }
             }
-        }
-    }
-
-    private fun filterData(
-        filter: ArticleFilter = ArticleFilter.NONE,
-        articles: List<Article>?
-    ): Map<String?, List<Article>> = when (filter) {
-        ArticleFilter.NONE -> {
-            mutableMapOf(
-                Pair(null, articles ?: emptyList())
-            )
-        }
-        ArticleFilter.YEAR -> {
-            articles?.groupBy { article ->
-                article.year.toString()
-            } ?: mutableMapOf()
-        }
-        ArticleFilter.EMPTY -> {
-            mutableMapOf()
         }
     }
 

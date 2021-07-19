@@ -13,15 +13,17 @@ import uk.co.jamiecruwys.compose.playground.ui.main.MainScreen
 import uk.co.jamiecruwys.compose.playground.ui.profile.ProfileScreen
 import uk.co.jamiecruwys.compose.playground.ui.theme.PlaygroundTheme
 import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
+import uk.co.jamiecruwys.compose.playground.viewmodel.FavouritesScreenViewModel
 
 @Suppress("ForbiddenComment")
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     /**
      * TODO: work out why it crashes when I remove this and make it use the default param
-     * in ArticleScreen to get the view model.
+     * in ArticleScreen/FavouritesScreen to get the view model.
      */
     private val articleScreenViewModel: ArticleScreenViewModel by viewModels()
+    private val favouritesScreenViewModel: FavouritesScreenViewModel by viewModels()
 
     @ExperimentalAnimationApi
     @ExperimentalFoundationApi
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                         ArticleScreen(articleScreenViewModel)
                     },
                     favouritesScreen = {
-                        FavouritesScreen()
+                        FavouritesScreen(favouritesScreenViewModel)
                     },
                     profileScreen = {
                         ProfileScreen()

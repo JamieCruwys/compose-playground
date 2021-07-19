@@ -24,13 +24,16 @@ import uk.co.jamiecruwys.compose.playground.R
 import uk.co.jamiecruwys.compose.playground.domain.Article
 import uk.co.jamiecruwys.compose.playground.ui.article.header.ArticleYearHeader
 import uk.co.jamiecruwys.compose.playground.ui.component.ScrollToTopButton
+import java.util.UUID
 
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
 @Composable
 fun ArticleFeed(
     data: Map<String?, List<Article>>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onFavourite: (UUID) -> Unit = {},
+    onUnfavourite: (UUID) -> Unit = {},
 ) {
     Box(modifier) {
         val listState = rememberLazyListState()
@@ -55,7 +58,9 @@ fun ArticleFeed(
                 items(articles) { article ->
                     ArticleItem(
                         article,
-                        Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        onFavourite = onFavourite,
+                        onUnfavourite = onUnfavourite,
                     )
                 }
             }
