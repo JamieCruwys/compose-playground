@@ -1,4 +1,8 @@
 <resources>
+    <!--
+        More information on MaterialComponents attributes can be found here:
+        https://material.io/develop/android/docs/getting-started
+    -->
     <style name="Theme.ComposePlayground" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
@@ -11,7 +15,7 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Background color. -->
-        <item name="background">@color/grey_900</item>
+        <item name="android:background">@color/grey_900</item>
         <item name="colorOnBackground">@color/white</item>
 
         <!-- Surface color. -->
