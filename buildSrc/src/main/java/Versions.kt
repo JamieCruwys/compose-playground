@@ -19,6 +19,7 @@ object Versions {
     const val TIMBER = "4.7.1"
     const val DAGGER_HILT = "2.37"
     const val ANDROIDX_DAGGER_HILT_COMPILER = "1.0.0"
+    const val DAGGER_HILT_NAVIGATION_COMPOSE = "1.0.0-alpha02"
     const val COMPOSE = "1.0.0-rc01"
     const val COMPOSE_ACTIVITY = "1.3.0-rc01"
     const val COMPOSE_VIEWMODEL = "1.0.0-alpha07"

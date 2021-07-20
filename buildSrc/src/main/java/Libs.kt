@@ -10,6 +10,7 @@ object Libs {
     const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DAGGER_HILT}"
     const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER_HILT}"
     const val ANDROIDX_DAGGER_HILT_COMPILER = "androidx.hilt:hilt-compiler:${Versions.ANDROIDX_DAGGER_HILT_COMPILER}"
+    const val DAGGER_HILT_NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:${Versions.DAGGER_HILT_NAVIGATION_COMPOSE}"
 
     const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
     const val COMPOSE_UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
@@ -26,4 +27,5 @@ object Libs {
     const val ACCOMPANIST_SYSTEM_UI_CONTROLLER = "com.google.accompanist:accompanist-systemuicontroller:${Versions.ACCOMPANIST_SYSTEM_UI_CONTROLLER}"
     const val ACCOMPANIST_PLACEHOLDER_MATERIAL = "com.google.accompanist:accompanist-placeholder-material:${Versions.ACCOMPANIST_PLACEHOLDER_MATERIAL}"
     const val COMPOSE_THEME_ADAPTER = "com.google.android.material:compose-theme-adapter:${Versions.COMPOSE_THEME_ADAPTER}"
+    const val COMPOSE_NA = "com.google.android.material:compose-theme-adapter:${Versions.COMPOSE_THEME_ADAPTER}"
 }

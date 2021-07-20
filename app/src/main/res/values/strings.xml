@@ -13,4 +13,6 @@
     <string name="favourites_app_bar_title">Favourites</string>
     <string name="profile_app_bar_title">Profile</string>
     <string name="profile_placeholder">Your profile (coming soon!)</string>
+    <string name="article_item_app_bar_title">Article Item</string>
+    <string name="article_item_placeholder">Article Item</string>
 </resources>

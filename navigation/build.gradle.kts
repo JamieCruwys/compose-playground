@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
@@ -20,13 +20,11 @@ android {
     }
 
     defaultConfig {
-        applicationId = "uk.co.jamiecruwys.compose.playground"
         minSdkVersion(Versions.ANDROID_MIN_SDK)
         targetSdkVersion(Versions.ANDROID_TARGET_SDK)
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
