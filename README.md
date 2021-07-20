@@ -17,11 +17,13 @@ Jetpack Compose playground
 * [x] [Exploring Jetpack Compose: TopAppBar](https://medium.com/google-developer-experts/exploring-jetpack-compose-topappbar-c8b79893be34)
 * [ ] [Navigating with Compose](https://developer.android.com/jetpack/compose/navigation)
 * [ ] [Theming in Compose](https://developer.android.com/jetpack/compose/themes)
+* [ ] [Modular navigation with Jetpack Compose](https://joebirch.co/android/modular-navigation-with-jetpack-compose/)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
 * [Compose Cookbook repo](https://github.com/Gurupreet/ComposeCookBook)
 * [Testing cheatsheet](https://developer.android.google.cn/jetpack/compose/testing-cheatsheet)
+* [Compose Academy](https://compose.academy/)
 
 ## Compose YouTube videos
 * [Declarative UI Patterns (Google I/O'19)](https://www.youtube.com/watch?v=VsStyq4Lzxo)
