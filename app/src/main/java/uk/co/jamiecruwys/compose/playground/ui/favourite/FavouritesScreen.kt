@@ -3,6 +3,7 @@ package uk.co.jamiecruwys.compose.playground.ui.favourite
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -19,6 +20,7 @@ import uk.co.jamiecruwys.compose.playground.domain.Resource
 import uk.co.jamiecruwys.compose.playground.ui.article.list.ArticleFeed
 import uk.co.jamiecruwys.compose.playground.viewmodel.FavouritesScreenViewModel
 
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi
 @Composable
@@ -84,6 +86,7 @@ fun FavouritesScreen(
     }
 }
 
+@ExperimentalMaterialApi
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
 @Preview

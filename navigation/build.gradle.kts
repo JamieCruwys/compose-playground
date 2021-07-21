@@ -60,7 +60,6 @@ dependencies {
     implementation(Libs.KOTLIN_STDLIB)
     implementation(Libs.CORE_KTX)
     implementation(Libs.APPCOMPAT)
-    implementation(Libs.MATERIAL)
     implementation(Libs.TIMBER)
 
     // Dagger hilt
@@ -70,23 +69,7 @@ dependencies {
     kapt(Libs.ANDROIDX_DAGGER_HILT_COMPILER)
 
     // Jetpack Compose
-    implementation(Libs.COMPOSE_UI)
-    implementation(Libs.COMPOSE_UI_TOOLING)
-    implementation(Libs.COMPOSE_FOUNDATION)
     implementation(Libs.COMPOSE_NAVIGATION)
-    implementation(Libs.COMPOSE_MATERIAL)
-    implementation(Libs.COMPOSE_MATERIAL_ICONS_CORE)
-    implementation(Libs.COMPOSE_MATERIAL_ICONS_EXTENDED)
-    implementation(Libs.COMPOSE_ACTIVITY)
-    implementation(Libs.COMPOSE_VIEWMODEL)
-    implementation(Libs.COMPOSE_LIVEDATA)
-    implementation(Libs.COMPOSE_THEME_ADAPTER)
-    androidTestImplementation(Libs.COMPOSE_UI_TEST_JUNIT)
-    debugImplementation(Libs.COMPOSE_UI_TEST_MANIFEST)
-
-    // Accompanist
-    implementation(Libs.ACCOMPANIST_SYSTEM_UI_CONTROLLER)
-    implementation(Libs.ACCOMPANIST_PLACEHOLDER_MATERIAL)
 
     // Testing
     testImplementation(Libs.JUNIT)

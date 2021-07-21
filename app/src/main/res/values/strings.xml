@@ -9,6 +9,7 @@
     <string name="feed_route">Feed</string>
     <string name="favourites_route">Favourites</string>
     <string name="profile_route">Profile</string>
+    <string name="article_detail_route">Article Detail</string>
     <string name="article_app_bar_title">Articles</string>
     <string name="favourites_app_bar_title">Favourites</string>
     <string name="profile_app_bar_title">Profile</string>

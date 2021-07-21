@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -28,6 +29,7 @@ import uk.co.jamiecruwys.compose.playground.domain.Article
 import uk.co.jamiecruwys.compose.playground.ui.component.FavouriteButton
 import java.util.UUID
 
+@ExperimentalMaterialApi
 @Suppress("LongMethod", "MagicNumber")
 @Composable
 fun ArticleItem(
@@ -35,6 +37,7 @@ fun ArticleItem(
     modifier: Modifier = Modifier,
     onFavourite: (UUID) -> Unit = {},
     onUnfavourite: (UUID) -> Unit = {},
+    onTap: (Article) -> Unit = {},
 ) {
     val favourite = remember { mutableStateOf(false) }
 
@@ -43,6 +46,9 @@ fun ArticleItem(
             modifier = Modifier
                 .padding(dimensionResource(R.dimen.article_item_card_padding)),
             elevation = dimensionResource(R.dimen.article_item_card_elevation),
+            onClick = {
+                onTap.invoke(article)
+            },
         ) {
             Column {
                 Image(
@@ -116,6 +122,7 @@ fun ArticleItem(
     }
 }
 
+@ExperimentalMaterialApi
 @Preview
 @Composable
 fun ArticleItemPreview() {
@@ -124,7 +131,7 @@ fun ArticleItemPreview() {
             title = "One title",
             subtitle = "One subtitle",
             date = "December 2016",
-            year = 2016
+            year = 2016,
         )
     )
 }

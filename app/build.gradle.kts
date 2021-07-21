@@ -59,6 +59,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":navigation"))
+
     implementation(Libs.KOTLIN_STDLIB)
     implementation(Libs.CORE_KTX)
     implementation(Libs.APPCOMPAT)

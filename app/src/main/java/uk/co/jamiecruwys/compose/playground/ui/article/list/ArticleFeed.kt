@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -26,6 +27,7 @@ import uk.co.jamiecruwys.compose.playground.ui.article.header.ArticleYearHeader
 import uk.co.jamiecruwys.compose.playground.ui.component.ScrollToTopButton
 import java.util.UUID
 
+@ExperimentalMaterialApi
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
 @Composable
@@ -34,6 +36,7 @@ fun ArticleFeed(
     modifier: Modifier = Modifier,
     onFavourite: (UUID) -> Unit = {},
     onUnfavourite: (UUID) -> Unit = {},
+    onItemTap: (Article) -> Unit = {},
 ) {
     Box(modifier) {
         val listState = rememberLazyListState()
@@ -61,6 +64,7 @@ fun ArticleFeed(
                         modifier = Modifier.fillMaxWidth(),
                         onFavourite = onFavourite,
                         onUnfavourite = onUnfavourite,
+                        onTap = onItemTap,
                     )
                 }
             }
@@ -90,9 +94,10 @@ fun ArticleFeed(
     }
 }
 
-@Preview
+@ExperimentalMaterialApi
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
+@Preview
 @Composable
 fun ArticleFeedPreview() {
     ArticleFeed(

@@ -5,6 +5,8 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
 
@@ -12,11 +14,12 @@ import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
 @ExperimentalAnimationApi
 @Composable
 fun MainScreen(
+    navController: NavHostController,
     articleScreen: @Composable (NavBackStackEntry) -> Unit,
     favouritesScreen: @Composable (NavBackStackEntry) -> Unit,
-    profileScreen: @Composable (NavBackStackEntry) -> Unit
+    profileScreen: @Composable (NavBackStackEntry) -> Unit,
+    articleDetailScreen: @Composable (NavBackStackEntry) -> Unit,
 ) {
-    val navController = rememberNavController()
     val items = listOf(
         BottomNavigationScreens.Feed,
         BottomNavigationScreens.Favourites,
@@ -35,7 +38,8 @@ fun MainScreen(
             navController = navController,
             articleScreen = articleScreen,
             favouritesScreen = favouritesScreen,
-            profileScreen = profileScreen
+            profileScreen = profileScreen,
+            articleDetailScreen = articleDetailScreen,
         )
     }
 }
