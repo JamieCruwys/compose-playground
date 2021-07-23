@@ -2,15 +2,12 @@ package uk.co.jamiecruwys.compose.playground.di
 
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import uk.co.jamiecruwys.compose.playground.data.ArticleService
 import uk.co.jamiecruwys.compose.playground.data.MockNetworkArticlesService
 import uk.co.jamiecruwys.compose.playground.data.NetworkArticleRepository
 import uk.co.jamiecruwys.compose.playground.domain.ArticleRepository
-import uk.co.jamiecruwys.navigation.NavigationManager
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
