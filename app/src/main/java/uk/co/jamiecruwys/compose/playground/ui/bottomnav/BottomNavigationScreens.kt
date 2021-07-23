@@ -9,8 +9,24 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import uk.co.jamiecruwys.compose.playground.R
 
 sealed class BottomNavigationScreens(val route: String, @StringRes val resourceId: Int, val icon: ImageVector) {
-    object Feed : BottomNavigationScreens("Feed", R.string.feed_route, Icons.Filled.Article)
-    object Favourites : BottomNavigationScreens("Favourites", R.string.favourites_route, Icons.Filled.Favorite)
-    object Profile : BottomNavigationScreens("Profile", R.string.profile_route, Icons.Filled.AccountCircle)
-    object ArticleDetail : BottomNavigationScreens("ArticleDetail", R.string.article_detail_route, Icons.Filled.AccountCircle)
+    object Feed : BottomNavigationScreens(
+        route = "Feed",
+        resourceId = R.string.feed_route,
+        icon = Icons.Filled.Article
+    )
+    object Favourites : BottomNavigationScreens(
+        route = "Favourites",
+        resourceId = R.string.favourites_route,
+        icon = Icons.Filled.Favorite
+    )
+    object Profile : BottomNavigationScreens(
+        route = "Profile",
+        resourceId = R.string.profile_route,
+        icon = Icons.Filled.AccountCircle
+    )
+    object ArticleDetail : BottomNavigationScreens(
+        route = "ArticleDetail",
+        resourceId = R.string.article_detail_route,
+        icon = Icons.Filled.AccountCircle
+    )
 }
