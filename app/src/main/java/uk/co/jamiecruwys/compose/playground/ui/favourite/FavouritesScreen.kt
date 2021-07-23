@@ -13,6 +13,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import timber.log.Timber
 import uk.co.jamiecruwys.compose.playground.R
@@ -25,7 +26,7 @@ import uk.co.jamiecruwys.compose.playground.viewmodel.FavouritesScreenViewModel
 @ExperimentalAnimationApi
 @Composable
 fun FavouritesScreen(
-    viewModel: FavouritesScreenViewModel = viewModel(),
+    viewModel: FavouritesScreenViewModel = hiltViewModel(),
 ) {
     val state = viewModel.state.observeAsState()
 

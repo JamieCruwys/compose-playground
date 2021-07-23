@@ -13,6 +13,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -30,7 +31,7 @@ import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 @ExperimentalAnimationApi
 @Composable
 fun ArticleScreen(
-    viewModel: ArticleScreenViewModel = viewModel(),
+    viewModel: ArticleScreenViewModel = hiltViewModel(),
     navController: NavHostController,
 ) {
     val state = viewModel.state.observeAsState()
