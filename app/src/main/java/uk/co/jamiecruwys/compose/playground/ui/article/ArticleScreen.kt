@@ -26,6 +26,7 @@ import uk.co.jamiecruwys.compose.playground.ui.article.list.ArticleFeed
 import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
 import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 
+@Suppress("LongMethod")
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi
