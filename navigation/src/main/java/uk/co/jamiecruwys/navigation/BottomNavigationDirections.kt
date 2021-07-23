@@ -1,7 +1,7 @@
 package uk.co.jamiecruwys.navigation
 
 object BottomNavigationDirections {
-    val default = object: NavigationCommand() {
+    val default = object : NavigationCommand() {
         override val route = ""
     }
     val feed = FeedDirections.root
