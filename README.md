@@ -73,3 +73,7 @@ Read the docs:
 https://docs.gradle.org/current/userguide/gradle_wrapper.html
 
 `./gradlew wrapper --gradle-version 7.1.1`
+
+## How to turn on captions for Talkback
+
+Settings -> Accessibility -> Talkback -> Settings -> Developer Settings -> Display speech output
