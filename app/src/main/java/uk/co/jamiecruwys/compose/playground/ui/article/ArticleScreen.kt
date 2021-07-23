@@ -14,11 +14,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptions
-import androidx.navigation.compose.rememberNavController
 import uk.co.jamiecruwys.compose.playground.R
 import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.Resource

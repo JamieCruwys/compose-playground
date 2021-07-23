@@ -7,10 +7,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navigation
 import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
-import uk.co.jamiecruwys.navigation.ArticleDirections
-import uk.co.jamiecruwys.navigation.MainScreenDirections
 
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
