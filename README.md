@@ -18,6 +18,7 @@ Jetpack Compose playground
 * [ ] [Navigating with Compose](https://developer.android.com/jetpack/compose/navigation)
 * [ ] [Theming in Compose](https://developer.android.com/jetpack/compose/themes)
 * [ ] [Modular navigation with Jetpack Compose](https://joebirch.co/android/modular-navigation-with-jetpack-compose/)
+* [ ] [READ THIS - stack overflow about issues with viewModel](https://stackoverflow.com/a/66575315) 
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
