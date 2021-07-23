@@ -15,7 +15,6 @@ import uk.co.jamiecruwys.compose.playground.ui.main.MainScreen
 import uk.co.jamiecruwys.compose.playground.ui.profile.ProfileScreen
 import uk.co.jamiecruwys.compose.playground.ui.theme.PlaygroundTheme
 
-@Suppress("ForbiddenComment")
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
