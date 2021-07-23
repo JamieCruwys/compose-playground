@@ -11,20 +11,20 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
-import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
+import uk.co.jamiecruwys.navigation.NavigationCommand
 
 @Composable
 fun MainScreenBottomNavigation(
     navController: NavController,
-    items: List<BottomNavigationScreens>
+    items: List<NavigationCommand>,
 ) {
     BottomNavigation {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
         items.forEach { screen ->
             BottomNavigationItem(
-                icon = { Icon(imageVector = screen.icon, contentDescription = null) },
-                label = { Text(stringResource(id = screen.resourceId)) },
+                icon = { Icon(imageVector = screen.icon!!, contentDescription = null) },
+                label = { Text(stringResource(id = screen.titleResId!!)) },
                 selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
                 onClick = {
                     navController.navigate(screen.route) {

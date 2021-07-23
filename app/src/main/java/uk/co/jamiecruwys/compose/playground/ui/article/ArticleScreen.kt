@@ -14,13 +14,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
-import androidx.navigation.NavOptions
 import uk.co.jamiecruwys.compose.playground.R
 import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.Resource
 import uk.co.jamiecruwys.compose.playground.ui.article.list.ArticleFeed
-import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
 import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 
 @Suppress("LongMethod")
@@ -30,7 +27,6 @@ import uk.co.jamiecruwys.compose.playground.viewmodel.ArticleScreenViewModel
 @Composable
 fun ArticleScreen(
     viewModel: ArticleScreenViewModel = hiltViewModel(),
-    navController: NavHostController,
 ) {
     val state = viewModel.state.observeAsState()
 
@@ -82,15 +78,7 @@ fun ArticleScreen(
                                     viewModel.unFavouriteArticle(id)
                                 },
                                 onItemTap = {
-                                    navController.navigate(
-                                        BottomNavigationScreens.ArticleDetail.route,
-                                        navOptions = NavOptions.Builder()
-                                            .setPopUpTo(
-                                                route = BottomNavigationScreens.Feed.route,
-                                                inclusive = false
-                                            )
-                                            .build()
-                                    )
+                                    viewModel.onArticleTapped()
                                 }
                             )
                         }

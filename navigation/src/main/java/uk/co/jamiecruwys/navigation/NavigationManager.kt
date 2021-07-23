@@ -1,10 +1,12 @@
 package uk.co.jamiecruwys.navigation
 
 import kotlinx.coroutines.flow.MutableStateFlow
-import uk.co.jamiecruwys.navigation.ArticleDirections.Default
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class NavigationManager {
-    var commands = MutableStateFlow(Default)
+@Singleton
+class NavigationManager @Inject constructor() {
+    var commands = MutableStateFlow(BottomNavigationDirections.default)
 
     fun navigate(directions: NavigationCommand) {
         commands.value = directions

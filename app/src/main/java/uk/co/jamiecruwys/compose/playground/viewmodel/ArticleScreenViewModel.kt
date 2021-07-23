@@ -13,6 +13,8 @@ import uk.co.jamiecruwys.compose.playground.domain.ArticleFilter
 import uk.co.jamiecruwys.compose.playground.domain.FavouriteArticleInteractor
 import uk.co.jamiecruwys.compose.playground.domain.LoadArticlesInteractor
 import uk.co.jamiecruwys.compose.playground.domain.Resource
+import uk.co.jamiecruwys.navigation.FeedDirections
+import uk.co.jamiecruwys.navigation.NavigationManager
 import java.util.UUID
 import javax.inject.Inject
 
@@ -20,6 +22,7 @@ import javax.inject.Inject
 class ArticleScreenViewModel @Inject constructor(
     private val loadArticlesInteractor: LoadArticlesInteractor,
     private val favouriteArticlesInteractor: FavouriteArticleInteractor,
+    private val navigationManager: NavigationManager,
 ) : ViewModel() {
     private val _state = MutableLiveData<Resource<Map<String?, List<Article>>>>()
     val state: LiveData<Resource<Map<String?, List<Article>>>> = _state
@@ -102,5 +105,10 @@ class ArticleScreenViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun onArticleTapped() {
+        val direction = FeedDirections.detail
+        navigationManager.navigate(direction)
     }
 }

@@ -7,7 +7,9 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
+import uk.co.jamiecruwys.navigation.FavouritesDirections
+import uk.co.jamiecruwys.navigation.FeedDirections
+import uk.co.jamiecruwys.navigation.ProfileDirections
 
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
@@ -21,11 +23,11 @@ fun MainScreenNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = BottomNavigationScreens.Feed.route
+        startDestination = FeedDirections.root.route,
     ) {
-        composable(BottomNavigationScreens.Feed.route, content = articleScreen)
-        composable(BottomNavigationScreens.Favourites.route, content = favouritesScreen)
-        composable(BottomNavigationScreens.Profile.route, content = profileScreen)
-        composable(BottomNavigationScreens.ArticleDetail.route, content = articleDetailScreen)
+        composable(FeedDirections.root.route, content = articleScreen)
+        composable(FeedDirections.detail.route, content = articleDetailScreen)
+        composable(FavouritesDirections.root.route, content = favouritesScreen)
+        composable(ProfileDirections.root.route, content = profileScreen)
     }
 }

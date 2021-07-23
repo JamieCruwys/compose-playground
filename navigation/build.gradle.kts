@@ -70,6 +70,8 @@ dependencies {
 
     // Jetpack Compose
     implementation(Libs.COMPOSE_NAVIGATION)
+    implementation(Libs.COMPOSE_MATERIAL_ICONS_CORE)
+    implementation(Libs.COMPOSE_MATERIAL_ICONS_EXTENDED)
 
     // Testing
     testImplementation(Libs.JUNIT)

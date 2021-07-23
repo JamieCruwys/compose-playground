@@ -6,7 +6,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
-import uk.co.jamiecruwys.compose.playground.ui.bottomnav.BottomNavigationScreens
+import uk.co.jamiecruwys.navigation.BottomNavigationDirections
 
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi
@@ -19,9 +19,9 @@ fun MainScreen(
     articleDetailScreen: @Composable (NavBackStackEntry) -> Unit,
 ) {
     val items = listOf(
-        BottomNavigationScreens.Feed,
-        BottomNavigationScreens.Favourites,
-        BottomNavigationScreens.Profile,
+        BottomNavigationDirections.feed,
+        BottomNavigationDirections.favourites,
+        BottomNavigationDirections.profile,
     )
 
     Scaffold(

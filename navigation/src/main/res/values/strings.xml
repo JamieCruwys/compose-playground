@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feed_route">Feed</string>
+    <string name="favourites_route">Favourites</string>
+    <string name="profile_route">Profile</string>
+    <string name="article_detail_route">Article Detail</string>
+    <string name="article_app_bar_title">Articles</string>
+    <string name="favourites_app_bar_title">Favourites</string>
+    <string name="profile_app_bar_title">Profile</string>
+    <string name="article_item_app_bar_title">Article Item</string>
+</resources>
