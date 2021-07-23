@@ -108,6 +108,7 @@ class ArticleScreenViewModel @Inject constructor(
     }
 
     fun onArticleTapped() {
+        Timber.d("Article tapped!")
         val direction = FeedDirections.detail
         navigationManager.navigate(direction)
     }

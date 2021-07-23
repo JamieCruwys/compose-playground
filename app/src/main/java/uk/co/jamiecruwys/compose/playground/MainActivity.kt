@@ -9,6 +9,7 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.collectAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import uk.co.jamiecruwys.compose.playground.ui.article.ArticleScreen
 import uk.co.jamiecruwys.compose.playground.ui.favourite.FavouritesScreen
 import uk.co.jamiecruwys.compose.playground.ui.item.ArticleItem
@@ -33,7 +34,9 @@ class MainActivity : AppCompatActivity() {
             PlaygroundTheme {
                 val navController = rememberNavController()
                 navigationManager.commands.collectAsState().value.also { command ->
+                    Timber.d("Received command ${command.route}")
                     if (command.route.isNotEmpty()) {
+                        Timber.d("Executing command ${command.route}")
                         navController.navigate(command.route, command.options)
                     }
                 }
