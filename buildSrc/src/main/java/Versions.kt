@@ -31,6 +31,7 @@ object Versions {
     const val JUNIT = "4.13.2"
     const val ANDROIDX_JUNIT = "1.1.3"
     const val ESPRESSO = "3.4.0"
+    const val STARTUP = "1.0.0"
     const val ACCOMPANIST_SYSTEM_UI_CONTROLLER = "0.14.0"
     const val ACCOMPANIST_PLACEHOLDER_MATERIAL = "0.14.0"
 }

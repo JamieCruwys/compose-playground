@@ -6,6 +6,7 @@ object Libs {
     const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
     const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
     const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
+    const val STARTUP = "androidx.startup:startup-runtime:${Versions.STARTUP}"
     const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DAGGER_HILT}"
     const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER_HILT}"

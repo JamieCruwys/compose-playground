@@ -66,6 +66,7 @@ dependencies {
     implementation(Libs.APPCOMPAT)
     implementation(Libs.MATERIAL)
     implementation(Libs.TIMBER)
+    implementation(Libs.STARTUP)
 
     // Dagger hilt
     implementation(Libs.DAGGER_HILT)
