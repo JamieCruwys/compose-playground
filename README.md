@@ -18,7 +18,8 @@ Jetpack Compose playground
 * [ ] [Navigating with Compose](https://developer.android.com/jetpack/compose/navigation)
 * [ ] [Theming in Compose](https://developer.android.com/jetpack/compose/themes)
 * [ ] [Modular navigation with Jetpack Compose](https://joebirch.co/android/modular-navigation-with-jetpack-compose/)
-* [x] [Fix for crashing viewmodels with Jetpack Compose](https://stackoverflow.com/a/66575315) 
+* [x] [Fix for crashing viewmodels with Jetpack Compose](https://stackoverflow.com/a/66575315)
+* [x] [App Startup](https://developer.android.com/topic/libraries/app-startup)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
