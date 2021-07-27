@@ -8,6 +8,7 @@ buildscript {
         classpath(kotlin("gradle-plugin", Versions.KOTLIN))
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.DAGGER_HILT_PLUGIN}")
         classpath("org.jacoco:org.jacoco.core:${Versions.JACOCO}")
+        classpath("de.mannodermaus.gradle.plugins:android-junit5:${Versions.ANDROID_JUNIT5_PLUGIN}")
     }
 }
 

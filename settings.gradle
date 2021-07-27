@@ -1,3 +1,6 @@
 rootProject.name = "Compose Playground"
-include ':app'
-include ':navigation'
+include (
+    ":app",
+    ":navigation",
+    ":dependencyConstraints"
+)

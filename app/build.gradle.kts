@@ -61,6 +61,11 @@ android {
 dependencies {
     implementation(project(":navigation"))
 
+    api(platform(project(":dependencyConstraints")))
+    kapt(platform(project(":dependencyConstraints")))
+    testImplementation(platform(project(":dependencyConstraints")))
+    androidTestImplementation(platform(project(":dependencyConstraints")))
+
     implementation(Libs.KOTLIN_STDLIB)
     implementation(Libs.CORE_KTX)
     implementation(Libs.APPCOMPAT)

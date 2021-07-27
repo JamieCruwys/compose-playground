@@ -1,6 +1,7 @@
 object Versions {
     // Plugins
     const val ANDROID_GRADLE_PLUGIN = "4.2.2"
+    const val ANDROID_JUNIT5_PLUGIN = "1.7.1.1"
     const val DAGGER_HILT_PLUGIN = "2.37"
     const val TASK_INFO_PLUGIN = "1.2.0"
 
