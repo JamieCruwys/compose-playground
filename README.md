@@ -20,6 +20,11 @@ Jetpack Compose playground
 * [ ] [Modular navigation with Jetpack Compose](https://joebirch.co/android/modular-navigation-with-jetpack-compose/)
 * [x] [Fix for crashing viewmodels with Jetpack Compose](https://stackoverflow.com/a/66575315)
 * [x] [App Startup](https://developer.android.com/topic/libraries/app-startup)
+* [ ] [Showkase](https://medium.com/airbnb-engineering/introducing-showkase-a-library-to-organize-discover-and-visualize-your-jetpack-compose-elements-d5c34ef01095)
+* [ ] [Compose and Dagger Hilt UI testing example](https://medium.com/nerd-for-tech/writing-an-integration-test-with-jetpack-compose-and-dagger-hilt-8ef888c1a23d)
+* [ ] [Hilt UI test setup](https://developer.android.com/training/dependency-injection/hilt-testing)
+* [ ] [Binding Hilt values in UI tests](https://developer.android.com/training/dependency-injection/hilt-testing#binding-new)
+* [ ] [Compose UI testing example](https://g403.co/android-compose-testing/)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
