@@ -25,6 +25,9 @@ Jetpack Compose playground
 * [ ] [Hilt UI test setup](https://developer.android.com/training/dependency-injection/hilt-testing)
 * [ ] [Binding Hilt values in UI tests](https://developer.android.com/training/dependency-injection/hilt-testing#binding-new)
 * [ ] [Compose UI testing example](https://g403.co/android-compose-testing/)
+* [ ] [Moshi](https://github.com/square/moshi#kotlin)
+* [ ] [Moshi Polymorphic Adapters](https://proandroiddev.com/moshi-polymorphic-adapter-is-d25deebbd7c5)
+* [ ] [Moshi Sealed Classes](https://github.com/ZacSweers/MoshiX/tree/main/moshi-sealed)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
