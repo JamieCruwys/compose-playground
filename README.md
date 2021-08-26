@@ -28,6 +28,7 @@ Jetpack Compose playground
 * [ ] [Moshi](https://github.com/square/moshi#kotlin)
 * [ ] [Moshi Polymorphic Adapters](https://proandroiddev.com/moshi-polymorphic-adapter-is-d25deebbd7c5)
 * [ ] [Moshi Sealed Classes](https://github.com/ZacSweers/MoshiX/tree/main/moshi-sealed)
+* [ ] [Composition Local](https://developer.android.com/jetpack/compose/compositionlocal)
 
 ## References
 * [Compose samples](https://github.com/android/compose-samples)
